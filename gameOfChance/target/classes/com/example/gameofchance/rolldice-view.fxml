@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" focusTraversable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="483.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gameofchance.rolldiceController">
+<children>
+    <AnchorPane prefHeight="435.0" prefWidth="615.0">
+        <children>
+            <Label layoutX="241.0" layoutY="14.0" text="Roll Dice">
+                <font>
+                    <Font name="Arial Bold" size="31.0" />
+                </font></Label>
+            <Label layoutX="360.0" layoutY="141.0" text="Your number:" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font></Label>
+            <Label fx:id="lblWinLoss" layoutX="416.0" layoutY="297.0" textFill="#143699">
+                <font>
+                    <Font name="System Bold" size="40.0" />
+                </font>
+            </Label>
+            <Button layoutX="224.0" layoutY="340.0" mnemonicParsing="false" onAction="#addMoney" prefHeight="30.0" prefWidth="141.0" text="Add the money">
+                <font>
+                    <Font name="System Bold Italic" size="14.0" />
+                </font>
+            </Button>
+            <Label layoutX="340.0" layoutY="95.0" text="Your balance $:">
+                <font>
+                    <Font name="System Bold" size="21.0" />
+                </font>
+            </Label>
+            <TextField fx:id="txtAddMoney" layoutX="56.0" layoutY="340.0" prefHeight="31.0" prefWidth="152.0">
+                <effect>
+                    <ColorAdjust />
+                </effect>
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </TextField>
+            <TextField fx:id="txtUserNumber" editable="false" layoutX="503.0" layoutY="143.0" prefHeight="25.0" prefWidth="95.0">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtRolledNumber" editable="false" layoutX="503.0" layoutY="190.0" prefHeight="25.0" prefWidth="95.0">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnOne" disable="true" layoutX="56.0" layoutY="110.0" mnemonicParsing="false" onAction="#simulate" prefHeight="58.0" prefWidth="64.0" text="1">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnTwo" disable="true" layoutX="143.0" layoutY="110.0" mnemonicParsing="false" onAction="#simulate" prefHeight="58.0" prefWidth="64.0" text="2">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnThree" disable="true" layoutX="230.0" layoutY="110.0" mnemonicParsing="false" onAction="#simulate" prefHeight="58.0" prefWidth="64.0" text="3">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnFour" disable="true" layoutX="56.0" layoutY="189.0" mnemonicParsing="false" onAction="#simulate" prefHeight="58.0" prefWidth="64.0" text="4">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnFive" disable="true" layoutX="143.0" layoutY="189.0" mnemonicParsing="false" onAction="#simulate" prefHeight="58.0" prefWidth="64.0" text="5">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSix" disable="true" layoutX="230.0" layoutY="189.0" mnemonicParsing="false" onAction="#simulate" prefHeight="58.0" prefWidth="64.0" text="6">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Button>
+            <Label layoutX="344.0" layoutY="188.0" text="Rolled number:" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="425.0" layoutY="243.0" text="Result:" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtResult" editable="false" layoutX="503.0" layoutY="246.0" prefHeight="25.0" prefWidth="95.0">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtUserBet" layoutX="56.0" layoutY="297.0" prefHeight="31.0" prefWidth="152.0" promptText="Enter your bet">
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lableMsg" layoutX="56.0" layoutY="385.0" prefHeight="81.0" prefWidth="519.0" text="Please add the money to start the game" textFill="RED" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtBalance" editable="false" layoutX="503.0" layoutY="98.0" prefHeight="25.0" prefWidth="95.0">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+        </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+    </AnchorPane>
+</children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</VBox>
