@@ -24,4 +24,23 @@ public class IntegerSetTests {
         assertEquals(testSet.size(), 1);
         assertTrue(testSet.contains(3));
     }
+
+    @Test
+    public void testInsertAlreadyThere(){
+        //check number is already in set
+        assertEquals(testSet.size(), 0);
+        assertFalse(testSet.contains(3));
+        //insert a number
+        testSet.insert(3);
+        assertEquals(testSet.size() , 1);
+        assertTrue(testSet.contains(3));
+
+        //check the number is already in the set
+        testSet.insert(3);
+        assertTrue(testSet.contains(3));
+        assertEquals(testSet.size() , 1);
+        testSet.remove(3);
+        assertFalse(testSet.contains(3));
+        assertEquals(testSet.size() , 0);
+    }
 }
