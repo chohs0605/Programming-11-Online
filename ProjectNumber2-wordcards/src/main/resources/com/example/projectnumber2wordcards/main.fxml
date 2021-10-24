@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectnumber2wordcards.MainController">
+   <children>
+      <ToolBar layoutY="-2.0" prefHeight="48.0" prefWidth="829.0">
+        <items>
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#setBtnLogin" text="Log In" />
+            <Button fx:id="btnStart" mnemonicParsing="false" onAction="#setBtnStart" text="Load &amp; Start" />
+          <Button fx:id="btnSave" disable="true" mnemonicParsing="false" onAction="#save" text="Save" />
+            <Button fx:id="btnExport" disable="true" mnemonicParsing="false" onAction="#exportSelection" text="Export Selection" />
+        </items>
+      </ToolBar>
+      <ListView fx:id="listView" layoutX="472.0" layoutY="52.0" prefHeight="200.0" prefWidth="343.0" />
+      <TextField fx:id="textWord" alignment="CENTER" editable="false" layoutX="5.0" layoutY="63.0" prefHeight="115.0" prefWidth="461.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+      </TextField>
+      <Button fx:id="btnIdontknow" disable="true" layoutX="106.0" layoutY="193.0" mnemonicParsing="false" onAction="#idontknow" text="I don't know" textFill="RED">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnIknow" disable="true" layoutX="276.0" layoutY="193.0" mnemonicParsing="false" onAction="#iknow" prefHeight="25.0" prefWidth="82.0" text="I know">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="textMeaning" editable="false" layoutX="6.0" layoutY="276.0" prefHeight="107.0" prefWidth="820.0" wrapText="true" />
+      <TextArea fx:id="textExample" layoutX="5.0" layoutY="405.0" prefHeight="107.0" prefWidth="820.0" wrapText="true" />
+      <Label layoutX="6.0" layoutY="256.0" text="Meaning" />
+      <Label layoutX="6.0" layoutY="388.0" text="Example" />
+   </children>
+</AnchorPane>

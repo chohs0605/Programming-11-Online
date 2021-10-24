@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="151.0" prefWidth="278.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectnumber2wordcards.LoginController">
+   <children>
+      <Label layoutX="35.0" layoutY="52.0" text="Username" />
+      <TextField fx:id="textId" layoutX="96.0" layoutY="48.0" />
+      <Button fx:id="btnLogin" layoutX="139.0" layoutY="88.0" mnemonicParsing="false" onAction="#setBtnLogin" text="OK" />
+   </children>
+</AnchorPane>
