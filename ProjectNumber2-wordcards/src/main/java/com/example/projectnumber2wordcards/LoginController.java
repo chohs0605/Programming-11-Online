@@ -22,7 +22,7 @@ public class LoginController {
     Button btnLogin;
 
     @FXML
-    protected void setBtnLogin(ActionEvent event) throws IOException {
+    protected void setBtnLogin(ActionEvent event) {
         // Get username from a user
         String uname = textId.getText();
         if (uname.isEmpty()) {

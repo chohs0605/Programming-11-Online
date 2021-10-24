@@ -5,6 +5,8 @@ public class Word {
     private String meaning;
     private String example;
 
+    Word () {}
+
     Word (String word, String meaning, String example) {
         this.word = word;
         this.meaning = meaning;

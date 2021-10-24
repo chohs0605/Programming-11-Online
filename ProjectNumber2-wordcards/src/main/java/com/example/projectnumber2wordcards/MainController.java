@@ -48,11 +48,11 @@ public class MainController {
     ListView<String> listView;
 
     static String loginId = null;
-    private ObservableList<Word> words = FXCollections.observableArrayList();
-    private ObservableList<Word> knowList = FXCollections.observableArrayList();
-    private ObservableList<String> selectedItems;
-    private int displayIndex = 0;
-    private boolean initBtnAction = false;
+    ObservableList<Word> words = FXCollections.observableArrayList();
+    ObservableList<Word> knowList = FXCollections.observableArrayList();
+    ObservableList<String> selectedItems;
+    int displayIndex = 0;
+    boolean initBtnAction = false;
 
     @FXML
     public void setBtnLogin(ActionEvent event) {
@@ -145,6 +145,10 @@ public class MainController {
 
     @FXML
     public void save(ActionEvent event) throws IOException {
+        saveUser();
+    }
+
+    void saveUser() {
         // save file <username>_words.txt
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(loginId + "_words.txt"));
@@ -219,7 +223,7 @@ public class MainController {
     }
 
     // Load data from a user file
-    void loadWords_know() throws IOException {
+    void loadWords_know() {
         File f = new File(loginId + "_words.txt");
         if (!f.exists())
             return;
@@ -227,37 +231,45 @@ public class MainController {
         // clear know list
         knowList.clear();
 
-        // load know words list from the file
-        BufferedReader reader = new BufferedReader(new FileReader(f));
-        String str;
-        while ((str = reader.readLine()) != null) {
-            // if format in file is wrong, skip it
-            String[] values = str.split("/");
-            if (values.length != 3)
-                continue;
-            // add friend into List
-            knowList.add(new Word(values[0], values[1], values[2]));
+        try {
+            // load know words list from the file
+            BufferedReader reader = new BufferedReader(new FileReader(f));
+            String str;
+            while ((str = reader.readLine()) != null) {
+                // if format in file is wrong, skip it
+                String[] values = str.split("/");
+                if (values.length != 3)
+                    continue;
+                // add friend into List
+                knowList.add(new Word(values[0], values[1], values[2]));
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        reader.close();
     }
 
     /* Load all words in words.txt files
        Clear existing data and insert them into words arrayList
      */
-    void loadWords() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("words.txt"));
-        String str;
+    void loadWords() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("words.txt"));
+            String str;
 
-        words.clear();
-        while ((str = reader.readLine()) != null) {
-            // if format in file is wrong, skip it
-            String[] values = str.split("/");
-            if (values.length != 3)
-                continue;
-            // add friend into List
-            words.add(new Word(values[0], values[1], values[2]));
+            words.clear();
+            while ((str = reader.readLine()) != null) {
+                // if format in file is wrong, skip it
+                String[] values = str.split("/");
+                if (values.length != 3)
+                    continue;
+                // add friend into List
+                words.add(new Word(values[0], values[1], values[2]));
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        reader.close();
     }
 
     /* Display all words on listView */
